@@ -1,1 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:18
+    container_name: auto_deploy_app
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+    command: bash -c "npm install && npm start"
 
