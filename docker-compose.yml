@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   app:
+<<<<<<< HEAD
     image: node:18
     container_name: auto_deploy_app
     working_dir: /app
@@ -11,3 +12,12 @@ services:
       - "3000:3000"
     command: bash -c "npm install && npm start"
 
+=======
+    build: .
+    container_name: hng13_app
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+>>>>>>> 6e753ac (Add deploy.sh, Dockerfile, docker-compose.yml, and app files)
